@@ -1,0 +1,8 @@
+<!--Con ngStyle lo que hacemos es colocar el estilo que le pasamos a traves del componente color que definimos en el header componen mediante el input con el decorador, Luego hacemos el binding para que cuando se haga clic sobre le componente se llame a la funcion onClick-->
+<button 
+    class="btn" 
+    [ngStyle]="{'background-color': color}"
+    (click)="onClick()"
+>
+    {{text}}
+</button>
