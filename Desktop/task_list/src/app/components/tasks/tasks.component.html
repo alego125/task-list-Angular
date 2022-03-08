@@ -1,6 +1,7 @@
 <!--Agregamos los items mediante el componente tasks-item para cada tarjeta que tengamos de informacion
 Recorremos todas las tareas pero en vez de mostrarla directamente en este componente loq ue hacemos es enviarla al componente de tarea mediante un bining-->
 <!--Esta viene siendo una de las tarjetas por lo cual vamos a recibir una tarea por tarjeta-->
+<!--Le pasamos la tarea que recibimos en el ngFor mediante binding con [task]-->
 <app-tasks-item 
     *ngFor="let task of tasks"
     [task]="task"
