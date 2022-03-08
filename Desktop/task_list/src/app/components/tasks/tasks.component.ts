@@ -4,6 +4,7 @@ import { TASK } from 'src/app/mock-task';
 //Tambien importamos la interface para poder trabajar con ella
 import { Task } from 'src/app/task';
 
+
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
@@ -13,6 +14,7 @@ export class TasksComponent implements OnInit {
 
   //Guardamos en un array toda la lista de tareas que tenemos en el JSON que habiamos creado
   tasks:Task[] = TASK;
+  
 
   constructor() { }
 

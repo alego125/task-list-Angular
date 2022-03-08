@@ -1,4 +1,12 @@
+<!--Mediante la etiqueta fa-Icon lo que hacemos es agregar el icono y con bindind llamamos a la variable del modulo que contiene el icono llamada faTimes-->
+<!--Al fa icon le colocamos un ngStyle que no es otra cosa que un estilo en liinea lo hacemos de esta manera para practicar el binding pero tranquilamente se le puede hacer con una clase directamente de css-->
 <div class="task">
-    <h3>{{task.text}}</h3>
+    <h3>
+        {{task.text}}
+        <fa-icon 
+            [icon]="faTimes"
+            [ngStyle]="{'color':'red'}"
+        ></fa-icon>
+    </h3>
     <p>{{task.day}}</p>
 </div>
