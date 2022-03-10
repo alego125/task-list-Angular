@@ -1,28 +1,28 @@
 {
-    "tasks":[
-        {
-            "id":1,
-            "text":"Compra semana",
-            "day":"Agosto 5 a las 12:00",
-            "remember":true
-        },
-        {
-            "id":2,
-            "text":"Estudiar para examen",
-            "day":"Agosto 5 a las 17:00",
-            "remember":true
-        },
-        {
-            "id":3,
-            "text":"Leer boostrap para mañana",
-            "day":"Agosto 5 a las 19:00",
-            "remember":true
-        },
-        {
-            "id":4,
-            "text":"Ir al gimnasio",
-            "day":"Agosto 5 a las 21:00",
-            "remember":true
-        }
-    ]
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Compra semana",
+      "day": "Agosto 5 a las 12:00",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Estudiar para examen",
+      "day": "Agosto 5 a las 17:00",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "text": "Estudiar para examen 2",
+      "day": "Agosto 5 a las 19:00",
+      "reminder": true
+    },
+    {
+      "id": 4,
+      "text": "Ir al gimnasio",
+      "day": "Agosto 5 a las 21:00",
+      "reminder": false
+    }
+  ]
 }

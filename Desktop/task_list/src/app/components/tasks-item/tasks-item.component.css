@@ -6,7 +6,7 @@
 }
 
 /*Creamos una clase para que todas las tareas que tengan un remainder tengan un borde verde*/
-.task.remander{
+.task.reminder{
     border-left: 5px solid green;
 }
 

@@ -3,5 +3,5 @@ export interface Task{
     id?:number; //Puede que venga con id o no si es que ya se guardo si no se guardo no tendremos un id todavia generado
     text:string;
     day:string;
-    remember:boolean;
+    reminder:boolean;
 }

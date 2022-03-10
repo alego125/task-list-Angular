@@ -1,11 +1,19 @@
 <!--Mediante la etiqueta fa-Icon lo que hacemos es agregar el icono y con bindind llamamos a la variable del modulo que contiene el icono llamada faTimes-->
 <!--Al fa icon le colocamos un ngStyle que no es otra cosa que un estilo en liinea lo hacemos de esta manera para practicar el binding pero tranquilamente se le puede hacer con una clase directamente de css-->
-<div class="task">
+<!--Le colocamos un evento click para que se ejecute una funcion que borra la tarea cuando el click se hace en el icono de la cruz y le pasamos por parametro a la funcion la tarea seleccionada es decir la tarea que se esta cliqueando para asi de esta manera borrar una tarea especifica de la lista de tareas-->
+<!--En el caso de que el reminder sea verdadero entonces queremos que el task se coloree como pusimos en el css para eso usamos ngClass y le indicamos la clase task.reminder para que se coloree vede si es vedadero-->
+<!--Luego si le hacemos click a la tarjeta para cambiar de reminder a no remidenr y vicebersa entonces para eso creamos el metodo onToggle(task) y le pasamos el task como parametro y hacemos un binding mediante click-->
+<div 
+    class="task"
+    [ngClass]="{ reminder: task.reminder }"
+    (click)="onToggle(task)"
+>
     <h3>
         {{task.text}}
         <fa-icon 
             [icon]="faTimes"
             [ngStyle]="{'color':'red'}"
+            (click)="onDelete(task)"
         ></fa-icon>
     </h3>
     <p>{{task.day}}</p>
