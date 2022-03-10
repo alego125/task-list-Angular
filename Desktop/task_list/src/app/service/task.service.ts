@@ -52,4 +52,13 @@ export class TaskService {
     return this.http.put<Task>(url, task, httpOptions)
   }
 
+
+  //Creamos el metodo que recibe la tarea del componente task y lo guardamos aqui en la bsae de datos json
+  addTask(task:Task):Observable<Task>{
+    //Ahora mandamos la informacion obtenida pero en vez de usar un put usamos un post por que estamos mandandole algo nuevo para crear
+    //Y en este caso la url directamente al estar creando un nuevo elemento es la url de la base de datos que creamos al comienzo por eso usamos la variable apiUrl
+    return this.http.post<Task>(this.apiUrl, task, httpOptions)
+  }
+
+
 }

@@ -53,4 +53,13 @@ export class TasksComponent implements OnInit {
     //A esto le llamamos mersintiendo la informacion 
   }
 
+  //Creamos el metodo el cual recibe la tarea del evento como un elemento del tipo Task
+  addTask(task:Task){
+    //Ahora una vez recibida la tarea lo que hacemos es eviarsela al servicio el cual nos va a permitir guardar dicha tarea
+    //Llamamos al servicio y le pasamos la tarea que queremos guaradar, y mediante el metodo subscribe va a devolver la tarea recien creada, y en subscribe lo que debemos hacer es meter en el array de tareas tasks del componente este
+    this.taskService.addTask(task).subscribe(task => {
+      this.tasks.push(task)
+    });
+  }
+
 }
