@@ -18,10 +18,13 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { TasksItemComponent } from './components/tasks-item/tasks-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { AboutComponent } from './components/about/about.component';
 
 //Definimos las rutas donde primero le decirmos que si el path es vacio entonces nos lleve al componente task component es decir si la ruta veine vacia nos lleva al task component
+//Definimos la ruta que nos lleva al componente about donde esta la informacion de nuestra aplicacion
 const appRoutes: Routes = [
-  {path: '', component:TasksComponent}
+  {path: '', component:TasksComponent},
+  {path: 'about', component:AboutComponent}
 ]
 
 //En imports importamos el RouterModule y mediante el metodo forRoot le indicamos appRoutes y le activamos en true el enabletraicing para el historial de rutas
@@ -33,6 +36,7 @@ const appRoutes: Routes = [
     TasksComponent,
     TasksItemComponent,
     AddTaskComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
