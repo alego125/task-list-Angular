@@ -1,6 +1,11 @@
 <!--Ahora dentro de este componente creamos el fgormulario encargado de recopilar la informacion para crear la nueva tarea-->
 <!--Le agregamos al formulario tambien la directiva ngSubmit para reconocer cuando se realiza un submit del formulario, entonces cuando se hace click en el boton de submit como es de tipo submit se va a ejecutar la directiva-->
-<form class="add-form" (ngSubmit)="onSubmit()">
+<!--Asignamos al formulario un *ngIf que lo que hace es si se cumple que showAddTask es verdadero se muestra el formulario y si no es verdadero se oculta-->
+<form 
+    class="add-form" 
+    (ngSubmit)="onSubmit()"
+    *ngIf="showAddTask"
+>
     <div class="form-control">
         <label for="text">Task</label>
         <!--Mediante un doble binding relizamos la recepcion o envio de la informacion en la variable de text, esto quiere decir que a medida que vamos escribiendo en el input se va guardando la informacion en el controlador y se esta visualizando a la vez-->

@@ -4,6 +4,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 //Importamos a la interface Task
 import { Task } from 'src/app/task';
 
+//Traemos el servicio creado uiService al componente add task
+import { UiService } from 'src/app/service/ui.service';
+
+//Importamos a subscription
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
@@ -19,8 +25,21 @@ export class AddTaskComponent implements OnInit {
   text:string = "";
   day:string = "";
   reminder:boolean = false;
+  //Variable booleana para controlar el estado de la variable showAddTask
+  showAddTask:boolean = false;
+  //Definimos tambien la variable subscription
+  subscription?:Subscription;
 
-  constructor() { }
+  //Metemos en el constructor al Servicio uiService
+  constructor(
+    private uiService: UiService
+  ) {
+    //Realizamos la sigueinte codificacion para poder escuchar el cambio de la variable showAddTask
+    this.subscription = this.uiService.onToggle()
+        .subscribe(value => {
+          this.showAddTask = value
+        });
+   }
 
   ngOnInit(): void {
   }
