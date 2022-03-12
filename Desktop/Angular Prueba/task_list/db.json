@@ -1,0 +1,10 @@
+{
+  "tasks": [
+    {
+      "text": "Realizar las compras",
+      "day": "Mañana 9:00",
+      "reminder": true,
+      "id": 1
+    }
+  ]
+}

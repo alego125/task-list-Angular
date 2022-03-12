@@ -1,0 +1,13 @@
+<head>
+    <h1>{{title}}</h1>
+    <!--En el colocor le colocamos la logica de un if si el showAddTask es verdadero entonces coloca el color rojo si es falso coloca el color verde. De la misma forma hacemos para text si esta en verdadero le pone close y si esta en falso le pone add-->
+    <!--Le hacemos un *ngIf para que si al ejecutar el metodo hasRoute con la ruta root o raiz devuelva true en caso contrario devolvera false y el componente head no sera mostrado por ejemplo en el about no se mostrara el head ya que no tendria sentido por eso se oculta-->
+    <app-button
+        [color]="showAddTask ? 'darkred' : 'green'"
+        [text]="showAddTask ? 'Close Task' : 'Add Task'"
+        (btnClick)="toggleAddTask()"
+        *ngIf="hasRouter('/')"
+    >
+
+    </app-button>    
+</head>
