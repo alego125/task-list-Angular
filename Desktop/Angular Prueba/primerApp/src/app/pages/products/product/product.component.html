@@ -1,0 +1,19 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>
+            {{ product.name }}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        {{ product.description }}
+    </mat-card-content>
+    <mat-card-actions>
+        <!--Colocamos el boton con la propiedad de boton de angular material, luego tambien usamos un icono de material de tipo carrito de compras dentro el nombre del icono lo colocamos dentro de la etiqueta de material mat icon-->
+        <!-- Usamos dentro del boton un binding para acceder y mostrar el precio del producto el cual a travez de un pipe lo transformamos con la directiva currency a tipo moneda a ese dato -->
+        <button mat-flat-button color="primary" >
+            Buy {{ product.price | currency }}
+            <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+        
+    </mat-card-actions>
+</mat-card>
