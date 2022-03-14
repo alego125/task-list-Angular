@@ -9,11 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 //Importamos el modulo http que es el moduloq ue nos provee angular para realizar peticiones http tanto sea put,delete,update,etc
 import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './shared/components/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeadComponent
+    HeadComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

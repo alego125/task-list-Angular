@@ -1,11 +1,12 @@
 //Este componente lo unico que hara es recibir la informacion de su componente padre y la pintara en pantalla nada mas, el componente padre es products.component
-import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output,EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Product } from '../interfaces/product.interface';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductComponent implements OnInit {
 

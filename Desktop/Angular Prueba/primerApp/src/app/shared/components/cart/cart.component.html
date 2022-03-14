@@ -1,0 +1,11 @@
+<!--Utilizamos una etiqueta contenedor mediante ng container y dentro de esta usamos la directiva estructural ngIf a la cual le colocamos dos variables total y quantity y mediantente el pipe le decimos async que quiere decir que seran observables y estos se interaran entre observable y no observable. Ademas le colocamos un alias para poder luego llamarlos mediante este por ejemplo dataCard.total o dataCard.quantity-->
+<ng-container *ngIf="{ total:total$ | async, quantity:quantity$ | async } as dataCard">
+    <ng-container *ngIf="dataCard.total">
+        <!--Ahora volvemos a colocar un ng container ya que queremos que solo se muestre el carrito cuando agreguemos un elemento para esto debemos volver a colocar un container con otro ngIf ya que el ngIf anterior siempre tendra algo es decir si no tiene valor exite de por si por lo que tendra un valor null entonces si se mostrara por lo que ahora debemos colcoar el ngIf con la propiedad tital por ejemplo y si esta no tiene valor entonces ahora si no se mostrara en pantalla-->
+        <!--Colocamos el icono de carrito de compras mediante la etiqueta mar-icon-->
+        <mat-icon>add_shopping_cart</mat-icon>
+        <!--Colocamos el total y le decimos que es una moneda mediante el pipe currency-->
+        {{dataCard.total | currency}}
+        ({{dataCard.quantity}})
+    </ng-container>
+</ng-container>
