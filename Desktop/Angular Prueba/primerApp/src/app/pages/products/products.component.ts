@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
+import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
 import { Product } from './interfaces/product.interface';
 import { ProductsService } from './services/products.service';
 
@@ -13,8 +14,10 @@ export class ProductsComponent implements OnInit {
   products!:Product[];
 
   //Inyectamos el servicio a consumir dentro del contructor, para esto creamos una propiedad llamada productSvc
+  //Inyectamos tambien el shopping cart service donde realizamos la actualizacion de la informacion de nuestro carrito de compras
   constructor(
-    private productSvc:ProductsService
+    private productSvc:ProductsService,
+    private shoppingCartSvc:ShoppingCartService
   ) { }
 
   ngOnInit(): void {
@@ -28,4 +31,9 @@ export class ProductsComponent implements OnInit {
       .subscribe();
   }
 
+  //Creamos el metodo que ejecuta la logica con el product que recibe del evento
+  addToCart(product:Product):void{
+    //Cuando el evento se realiza llamamos al metodo udateCart de nuestro servicio el cual se encarga de realizar el agregado de toda la informacion de nuestro carrito de compras
+    this.shoppingCartSvc.udateCart(product);
+  }
 }
