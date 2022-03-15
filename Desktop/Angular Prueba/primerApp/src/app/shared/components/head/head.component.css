@@ -2,3 +2,14 @@
 .spacer{
     flex: 1 1 auto;
 }
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.mouseHover:hover{
+    background-color: rgb(113, 198, 255);
+    cursor: pointer;
+    transition: all 0.7 ease-in-out;
+}

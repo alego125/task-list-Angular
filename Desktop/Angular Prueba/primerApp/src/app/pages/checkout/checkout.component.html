@@ -1,1 +1,92 @@
-<p>checkout works!</p>
+<div class="container">
+    <form class="form item">
+
+        <!--Usamos material library-->
+        <mat-form-field class="form__element">
+            <input 
+                matInput
+                placeholder="Name"
+                required
+                [(ngModel)]="model.name"
+                name="name"
+                #name="ngModel"
+            >
+            <!--Agregamos validaciones-->
+            <!--Si el campo no es valido o pristine que quiere decir que el usuario no ha itroducido algo-->
+            <mat-error *ngIf="!name.valid || name.pristine">
+                Name Required
+            </mat-error>
+        </mat-form-field>
+        
+        <!--Mediante estos radio buttons le damos la opcion que coloquen si quieren recoger en tienda o envio a casa del producto-->
+        <mat-radio-group class="form__element">
+            <p>Choose an option:</p>
+            <!--En el evento change le decimos que llamara una funcion la cual recibira un parametro booleano segun sea que este o no seleccionado-->
+            <mat-radio-button
+                value="pickup"
+                (change)="onPickupOrDelivery(false)"
+            >
+            Pickup
+            </mat-radio-button>
+            <mat-radio-button
+                value="delivery"
+                (change)="onPickupOrDelivery(true)"
+            >
+            Delivery
+            </mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field class="form__element">            
+            <input 
+                matInput
+                placeholder="Shipping Address"
+                required
+                [(ngModel)]="model.shippingAddress"
+                name="shippingAddress"
+                #shippingAddress="ngModel"  
+            >
+        </mat-form-field>
+
+        <mat-form-field class="form__element">            
+            <input 
+                matInput
+                placeholder="City"
+                required
+                [(ngModel)]="model.city"
+                name="city"
+                #city="ngModel"  
+            >
+        </mat-form-field>
+        
+        <!--Colocamos el listado de tiendas que habran para elegir si el usuario selecciona la opcion de retirar por tienda-->
+        <mat-form-field class="form__element">   
+            <mat-label>Select me</mat-label>   
+            <mat-select 
+                name="store"
+                #store="ngModel"
+                [(ngModel)]="model.store" 
+                placeholder=""
+            >
+                <!--Mediante el value podriamos si queremos enviar infromacion al servidor de por el ejemplo el nombre de al tienda que se haya seleccionado para tener un registro de la informacion por ejemplo-->
+                <mat-option 
+                    [value]="tienda" 
+                    *ngFor="let tienda of stores"
+                >
+                {{tienda.name}} - {{tienda.openingHours}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </form>
+</div>
+
+<div class="container__button">
+    <button
+        [disabled]=""
+        mat-raised-button
+        color="primary"
+        type="submit"
+    >
+    Checkout
+    </button>
+</div>

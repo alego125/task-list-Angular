@@ -1,7 +1,9 @@
 <mat-toolbar color="primary">
-    <span>My Store</span>
+    <!--Redireccionamos hacia la pagina principal a traves del routerLink-->
+    <a [routerLink]="['/']"><span>My Store</span></a>    
     <!--Colocamos un span donde con este y la clase spacer correremos toada linformacion del carrito de compras a la derecha de la pantalla por esto lo colocamos entre el titulo mystore y el componente app cart-->
     <span class="spacer"></span>
     <!--Para que no moleste y nos devuelva error la sigueinte etiqueta debemos en app.module.ts colocar dentro de declarations al app cart module y realizar la importacion dentro del componente app module-->
-    <app-cart></app-cart>
+    <!--Creamos una funcion para el evento click que lo que hara es redirigirnos hacia el formulario de checkout para finalizar la compra-->
+    <app-cart class="mouseHover" (click)="goToCheckout()"></app-cart>
 </mat-toolbar>

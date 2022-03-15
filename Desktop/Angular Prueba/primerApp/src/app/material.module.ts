@@ -7,11 +7,24 @@ import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 //Importamos el modulo de iconos de material
 import { MatIconModule } from "@angular/material/icon";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatRadioModule } from "@angular/material/radio";
+import { MatInputModule } from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
 
 //Creamos un decorador el cual marcara el comportamiento de la clase de mas abajo
 //Exportamos el modulo de toolbar de material para hacer uso del mismo
 @NgModule({
-    exports: [MatToolbarModule, MatCardModule, MatButtonModule, MatIconModule]
+    exports: [
+        MatToolbarModule, 
+        MatCardModule, 
+        MatButtonModule, 
+        MatIconModule,
+        MatFormFieldModule,
+        MatRadioModule,
+        MatInputModule,
+        MatSelectModule,
+    ]
 })
 
 export class MaterialModule{}
