@@ -6,10 +6,12 @@ import { CheckoutComponent } from './checkout.component';
 //Importamos el modulo de formulario y el de material
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material.module';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
-    CheckoutComponent
+    CheckoutComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,

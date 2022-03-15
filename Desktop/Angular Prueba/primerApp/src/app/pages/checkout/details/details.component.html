@@ -1,0 +1,33 @@
+<!--Aqui creamos el modulo para colocar todo el detalle de nuestro pedido-->
+<div class="container__table">
+    <table class="table">
+        <!--Cabecera de la tabla-->
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price Unit</th>
+                <th>Sub Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Lo que hacemos es mediante un ngFor recorrer la lista que nos devuelve el observable, pero este observable esta en crudo es decir hay que resolverlo de alguna manera para transformarlo en una lista que pueda ser recorrida, para esto utilizamos el pip y async, de esta manera el observable de cart$ se resulve y ahora si lo podemos recorrer mediante el ngFor-->
+            <tr *ngFor="let item of cart$ | async">
+                <!--Mediante binding colocamos cada una de las propiedades extraidas del ngFor-->
+                <td>{{ item.name }}</td>
+                <td>{{ item.qty }}</td>
+                <td>{{ item.price | currency }}</td>
+                <!--Para el total hacemos una operacion matematica de multiplicar la cantidad de items por el precio unitario y esto nos da el total, luego convertimos mediante pipe y currency a estilo moneda-->
+                <td>{{ item.qty * item.price | currency }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--A continuacion lo que haremos sera crear un contenedor que tenga un resumen de la compra -->
+    <div class="container__total">
+        <p class="total">
+            <strong>Total: <span>{{ total$ | async | currency }}</span> </strong>
+        </p>
+    </div>
+
+</div>
