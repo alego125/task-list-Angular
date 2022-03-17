@@ -23,4 +23,12 @@ export class ProductsService {
     //Dentro del metodo lo que hacemos es devolver mediante el metodo http del modulo httpclient y luego con le metodo get que nos provee angular, este metodo get espera como parametro una url con la cual obtener la informacion y despues opciones pero estas no son obligatorias colocarlas
     return this.http.get<Product[]>(this.apiUrl); 
   }
+
+  //Creamos el metodo que estara encargado de actualizar el stock del producto comprado
+  updateStock(productId:number, stock:number):Observable<any>{
+    //En este caso como lo que queremos hacer es solo actualizar una propiedad en la api de producto entonces usamos el patch ya que si usaramos el put deberiamos pasar todas las propiedades del producto para actualizar
+    //Al metodo patch aparte de la url con el id del producto en este caso que queremos actualizar, tanbien debemos pasarle un segundo parametro con la estructura donde vamos a actualizar, para esto creamos un objeto en una variable con la estructura
+    const body = { "stock":stock };
+    return this.http.patch<any>(`${this.apiUrl}/${productId}`, body);
+  }
 }

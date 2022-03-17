@@ -1,7 +1,7 @@
 export interface Details {
     productId:number;
     productName:string;
-    quantity:string;
+    quantity:number;
 }
 
 export interface Order {
@@ -9,7 +9,7 @@ export interface Order {
     shippingAddres:string;
     city:string;
     date:string;
-    pickup:boolean;
+    isDelivery:boolean;
     id:number;
 }
 

@@ -11,7 +11,6 @@ export class CartComponent {
     //Decalaramos las variables que contendran los observables de quantity, total y cart (por eso le colocamos el signo $ por que se trata de observables)
     quantity$ = this.shoppingCartSvc.quantityAction$;
     total$ = this.shoppingCartSvc.totalAction$;
-    cart$ = this.shoppingCartSvc.cartAction$;
 
     constructor( 
         private shoppingCartSvc:ShoppingCartService

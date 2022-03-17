@@ -31,7 +31,7 @@ export class DataService {
   }
 
   //Creamos el metodo encargado de guardar el detalle de las ordenes
-  saveDetailsOrder(details:DetailOrder):Observable<DetailOrder>{
+   saveDetailsOrder(details:DetailOrder):Observable<DetailOrder>{
     return this.http.post<DetailOrder>(`${this.apiUrl}/detailsOrders`,details);
   }
 

@@ -21,22 +21,20 @@
             </mat-error>
         </mat-form-field>
         
-        {{isDelivery}} - isDelivery?
-
         <!--Mediante estos radio buttons le damos la opcion que coloquen si quieren recoger en tienda o envio a casa del producto-->
         <mat-radio-group class="form__element">
             <p>Choose an option:</p>
             <!--En el evento change le decimos que llamara una funcion la cual recibira un parametro booleano segun sea que este o no seleccionado, por defecto le hemos puesto al metodo false para el radio button de pickup y true al de delivery ademas que por defecto al iniciar la pagina estara seleccinado el radiobutton de pickup ya que le pusimos la propiedad checked-->
             <mat-radio-button
                 value="pickup"
-                (change)="onPickupOrDelivery(false)"
-                checked
+                (change)="onPickupOrDelivery(false)"                
             >
             Pickup
             </mat-radio-button>
             <mat-radio-button
                 value="delivery"
                 (change)="onPickupOrDelivery(true)"
+                checked
             >
             Delivery
             </mat-radio-button>
